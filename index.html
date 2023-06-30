@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--
+1.  Head.
+2.  Body starts.
+3.	Header
+4.	Main
+5.	Aside
+6.	Footer
+
+-->
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Examinationsuppgift, Webbutveckling med HTML och CSS" />
+    <meta name="author" content="Nora Hammenberg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap project</title>
+
+    <!--Css Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
+    <!--Min CSS Fil-->
+    <link href="main.css" rel="stylesheet" type="text/css">
+
+    <!--googlefont-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--Bootstrap ikoner-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--Header-->
+ <header class="header">
+
+<!--Hamburger meny läggs först så att den visas över bilden i de mindre enheterna-->
+<!--Hamburger meny för mindre enheter, fån External content Bootstrap: https://getbootstrap.com/docs/5.0/components/navbar/-->
+<!--Genom att använda de olika "d-none" och "d-block" kan jag dölja hamburger menyn för större enheter-->
+  <div class="d-lg-none d-xl-block d-lg-block d-xl-none d-xxl-block d-xxl-none">
+    <div class="collapse" id="navbarToggleExternalContent">
+       <div class="bg p-4">
+        <!--Ul innuti dropdown menyn för mindre enheter--> 
+          <!--För att får stora bokstäver använder jag klassen "test-uppercase" från Bootstrap, jag lägger till en egen klass menuList för att i min CSS kunna ändra hover färgen-->       
+           <ul class="nav text-uppercase menuList">
+             <li class="nav-item">
+               <!--Här läggs mitt egna klassnamn menu till för att ge de olika länkarna i koden en spesifik färg.-->
+               <a class="nav-link menu" href="index.html">Home</a>
+             </li>
+            
+              <!--Dropdown från bootstarp under "Dark dropdowns https://getbootstrap.com/docs/5.1/components/dropdowns/-->
+              <li class="p-4 mt-3" id="navbarNavDarkDropdown2">
+                <!--Egen klass används för att få rätt färg på länken i focus och activt läge-->
+                <ul class="navbar-nav dropdownList">
+                  <li class="nav-item dropdown mTop">
+                    <a class="nav-link dropdown-toggle menu" href="#" id="navbarDarkDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Collaboration
+                    </a>
+                    <!--Egen klass används för att få rätt färg på länken i focus och activt läge-->
+                    <ul class="dropdown-menu dropdownList">
+                      <!--Egen klass används för att få rätt färg på länken i focus och activt läge-->
+                      <li class="dropdownList"><a class="dropdown-item menu" href="collaboration.html">Edition Printing</a></li>
+                      <li class="dropdownList"><a class="dropdown-item menu" href="booking.html">Booking</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <!--slut på dropdown-->
+
+             <li class="nav-item">
+               <a class="nav-link menu" href="courses.html">Courses</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link menu" href="contact.html">Contact</a>
+             </li>
+           </ul>
+       </div>
+     </div>
+     <!--navbar-light vals för att använda de ljusa färger som bootstrap erbjuder-->
+     <nav class="navbar navbar-light bg">
+       <!--text-start används för att få hamburgerbar knappen att vara på vänster sidan.-->
+       <div class="container-fluid text-start">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+       </div>
+     </nav>
+   </div>  <!--slut hamburger meny-->    
+
+      <!--Header bild logo, text-center används för att placera bildern i mitten.-->
+     <div class="text-center">
+      <!--Responsiv bild från: https://getbootstrap.com/docs/5.1/content/images/-->
+      <!--olika padding klasser används vid olika lägen för att skapa en responsiv sida-->
+        <img src="Images/logo.png" class="img-fluid p-4 p-xl-5" alt="Stone Tree Press Logo med adress">
+    </div>
+
+<!--navigerings meny under logo-->
+<!--d-flex klassen används för få elementen att flexa, justify-content-center placerar menyn i mitten-->
+    <div class="d-flex justify-content-center">
+      <!--d-none och d-block används för att dölja menyn i de mindre enheterna-->
+      <nav class="navbar d-sm-none d-md-block d-none d-sm-block d-md-none d-lg-block">
+        <!--Meny Horizontal alignment från: https://getbootstrap.com/docs/5.1/components/navs-tabs/-->
+        <ul class="nav text-uppercase menuList ">
+            <!--min egna klass namn mTop används för att placera menyn på rätt ställe.-->
+            <li class="nav-item p-3 mTop">
+              <a class="nav-link active menu" aria-current="page" href="index.html">Home</a>
+            </li>
+          
+          <!--Dropdown från bootstarp under Dark dropdowns: https://getbootstrap.com/docs/5.1/components/dropdowns/-->
+            <li class="p-3" id="navbarNavDarkDropdown1">
+              <ul class="navbar-nav dropdownList">
+                <li class="nav-item dropdown mTop">
+                  <a class="nav-link dropdown-toggle menu" href="#" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Collaboration
+                  </a>
+                  <ul class="dropdown-menu dropdownList">
+                    <li class="dropdownList"><a class="dropdown-item menu" href="collaboration.html">Edition Printing</a></li>
+                    <li class="dropdownList"><a class="dropdown-item menu" href="booking.html">Booking</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <!--slut på dropdown-->
+            <!--fortsättning på navigerings meny-->
+            <!--p-3 läggs till för att få ett bra mellan rum mellan de olika meny delarna-->
+            <li class="nav-item p-3 mTop">
+              <a class="nav-link menu" href="courses.html">Courses</a>
+            </li>
+            
+            <li class="nav-item p-3 mTop">
+                <a class="nav-link menu" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+ </header>
+ <!--Slut på Header-->
+
+    <!--maninWrapper innehåller CSS-kod med bland annat font-->
+    <main class="mainWrapper">
+    <!--flex "Enable flex behaviors" från bootstrap https://getbootstrap.com/docs/5.1/utilities/flex/ -->
+    <!--två bilder syns i stora enheter och i mindre enheter ser vi en bild-->
+      <div class="d-flex p-3 p-md-2 bd-highlight justify-content-center">
+        <!--Två responsiv bilder från Bootstrap: https://getbootstrap.com/docs/5.1/content/images/ -->
+        <div>
+          <img src="Images/womenrollingoutinkonlithographystonesmall.png" class="img-fluid bd-highlight p-md-4" alt="Women buffing in gum on a lithographystone">
+        </div>
+        <!--custumMedia används här för att ge en egen media query som fattades i Bootstrap-->
+        <div class="custumMedia">
+          <!--d-none och d-block används här för att bölja denna bild i de mindre enheterna-->
+          <img src="Images/womenspongingsmall.png" class="img-fluid bd-highlight p-md-4 d-sm-none d-md-block d-none d-sm-block d-lg-none d-xl-block d-md-none d-lg-block" alt="Women buffing in gum on a lithographystone">
+        </div>
+      </div>
+      <!--Olika bootstrap margin klasser används för att ge rätt placering i de olika enheter och skapa en responsive sida-->
+      <h1 class="text-center largeFontHeading mb-4 m-4 mb-sm-3 mb-md-4">Stone Tree Press</h1>
+      <h2 class="text-center">Leeds First Fine Art Lithography Workshop</h2>
+      <!--Bootstraps olika padding klasser används för att skapa en responsiv sida-->
+      <div class="w-75 p-3 p-sm-3 p-md-4 m-auto">
+        <p class="text-center paragraphySize"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec eros scelerisque,
+           tristique velit et, interdum lorem. Nullam magna libero, feugiat quis felis malesuada, suscipit pulvinar risus.
+            Duis dignissim ultrices fringilla. Sed bibendum eget nibh.</p>
+      </div>
+    </main>
+<!--Slut på main-->
+
+<!--tre flex rader från bootstrap: https://getbootstrap.com/docs/5.1/utilities/flex/-->
+<!--innom varje rad finns ett card från bootstrap: https://getbootstrap.com/docs/5.1/components/card/-->
+<!--tre rader syns i större enheter och i mindre enheter syns två i en kolumn-->
+<!--De olika justify-content klasser används för de olika enheter för att skapa en responsiv sida-->
+<aside class="d-md-flex flex-row bd-highlight mb-3 justify-content-center justify-content-lg-evenly justify-content-md-evenly p-4 p-sm-5">
+<!--Card 1 döljs i mindre enheter med hjälp av bootstraps d-none och d-block-->   
+<!--en egen klass har lagts till för att ta bort ramen runt kortet.--> 
+  <div class="card cardNoBarder d-sm-none d-md-block d-none d-sm-block d-md-none d-lg-block" style="width: 18rem;">
+    <img src="Images/handworkingonlithographystone.png" class="card-img-top" alt="A person sponging a lithography stone on a press.">
+    <!-- en egen klass har lagts till så att jag kan ge önskad bakgrunds färg mm.-->
+    <div class="card-body cardStyle p-4 ">
+      <h5 class="card-title ">Lithography</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut mi non nibh malesuada condimentum. Quisque pretium erat ut gravida volutpat. </p>
+      <a href="#" class="btn btn-outline-dark">Learn more</a>
+    </div> 
+  </div>
+<!--Card 2-->        
+  <div class="m-auto m-md-0 pb-5 pt-md-0 card cardNoBarder" style="width: 18rem;">
+    <img src="Images/womenwashingout.png" class="card-img-top" alt="Women washing out lithography stone an a course.">
+
+    <div class="card-body cardStyle p-4">
+      <h5 class="card-title">Courses</h5>
+      <p class="card-text">Phasellus vitae justo sapien. Aenean pellentesque ex in metus varius condimentum. </p>
+      <a href="courses.html" class="btn btn-outline-dark">Find out what courses are on</a>
+    </div>
+  </div>
+<!--Card 3-->        
+  <div class="m-auto m-md-0 pt-5 pt-md-0 card cardNoBarder" style="width: 18rem;">
+    <img src="Images/womenworkingonlithographystone.png" class="card-img-top" alt="Women buffing in gum arabicum on a stone.">
+
+    <div class="card-body cardStyle p-4">
+      <h5 class="card-title">Collaboration Printing</h5>
+      <p class="card-text">Maecenas imperdiet libero sit amet sem mattis, in porta arcu semper. Fusce consectetur dictum odio, a pharetra magna suscipit eu. </p>
+      <a href="collaboration.html" class="btn btn-outline-dark">Collaborate with us</a>
+    </div>
+  </div>
+</aside>
+<!--slut på aside-->
+
+    <!--footer-->
+    <!--Footern är samma på alla sidor.-->
+    <!--footer från header and footer på bootstrap hemsida: https://getbootstrap.com/docs/5.1/components/card/#header-and-footer-->
+    <footer class="footer">
+      <!--card för texten-->
+      <div class="card text-center">
+
+        <div class="card-body">
+
+          <h4 class="card-title p-3">Stone Tree Press</h4>
+          <!--En egen klass har lagts till för att få rätt "lineheight"-->
+          <div class="adressFooter">
+            <p class="card-text p-1">Patrick Studios </p>
+            <p> St Mary's Lane </p>
+            <p>LS9 7EH</p>
+            <p>Leeds</p>
+          </div>
+
+          <div>
+            <!--fs.3 används för storlek på ikonerna -->
+            <button class="btn fs-3">
+              <i class="bi bi-envelope-fill"></i>
+            </button>
+
+            <button class="btn fs-3">
+              <i class="bi bi-instagram"></i>
+            </button>
+
+            <button class="btn fs-3">
+              <i class="bi bi-facebook"></i>
+            </button>
+
+            <button class="btn fs-3">
+              <i class="bi bi-twitter"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  </footer>
+<!--Slut på footer-->  
+</body> 
+</html>

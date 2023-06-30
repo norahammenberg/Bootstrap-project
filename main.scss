@@ -1,0 +1,183 @@
+/*
+1.	Variabels
+2.	Mixins
+3.	Header
+4.	Footer
+5.	Home
+6.	Collaboration
+7.	Booking
+8.	Courses
+9.	Contact
+10.	Media queries
+*/
+/*----------------------------------*/
+
+/*1-------------Varibales*/
+$minusMargin: -40px;
+$lineHightForSmallText: 0.5;
+$noBorder: none;
+$primDarkColor: black;
+$primLightColor: #949494;
+$largeHeadingMobile: 50px;
+$largeHeadingDesktop: 60px;
+$paragraphyMobile: 18px;
+$paragraphyDesktop: 20px;
+$largeSidePadding: 100px;
+
+/*2---------------Mixins*/
+
+@mixin primaryFontFamilyAndColor {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(98, 98, 98);
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+@mixin seconderyFontFamilyAndColor {
+  font-family: 'Quattrocento Sans', sans-serif;
+  color: #414141;
+  letter-spacing: 0.5px;
+}
+
+@mixin cardColorNoBorder {
+  background-color: #dfcdbe;
+  border: none;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+@mixin headerTopBottomMargin ($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom
+}
+
+@mixin backgroundImages ($link, $repeat, $position) {
+  background-image: $link;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+/*Stilmallar */
+/*-------Gemensamt för alla sidor-------*/
+/*3---------------------Header*/
+.header{
+  @include seconderyFontFamilyAndColor;
+}
+.menu {
+  color: $primLightColor;
+}
+
+/*Nestling, för att ge menyns olika länkar en egen färg när användaren för muspilen över*/
+
+ul.menuList {
+  a:hover {
+    color: $primDarkColor;
+  }
+}
+/*Nestling, här når jag dropdown menyn och ger den egen färg när den är activ, focus.*/
+  ul.dropdownList{
+    a:active {
+      color: black;
+    }
+    a:focus {
+      color: black;
+    }
+    
+      li.dropdownList{
+        a:active {
+        background-color: white;
+      }
+    }
+  }
+
+.mTop {
+  margin-top: $minusMargin;
+}
+/*slut på Header*/
+
+/*--------------------Main*/
+.mainWrapper {
+  @include primaryFontFamilyAndColor;
+}
+
+.mainFont {
+  @include primaryFontFamilyAndColor;
+}
+
+/*4------------------Footer*/
+.footer {
+  @include seconderyFontFamilyAndColor;
+}
+.adressFooter {
+  line-height: $lineHightForSmallText;
+}
+/*Slut på footer*/
+
+/*-------Induviduella sidor:-------*/
+/*5-----------------Home-*/
+.largeFontHeading {
+  font-size: $largeHeadingMobile;
+}
+.paragraphySize {
+  font-size: $paragraphyMobile;
+}
+
+.cardStyle {
+  @include cardColorNoBorder;
+}
+.cardNoBarder {
+  border: $noBorder;
+}
+
+/*6---------------Collaboration*/
+.noBorderRadios {
+  border-radius: 0px;
+}
+
+/*7----------------Booking*/
+.contactBackgroundImage{
+  @include backgroundImages (url(Images/lithographystoneandsponges.png), no-repeat, 50% 38%)
+}
+
+.reservetionFormStyle {
+  color: $primDarkColor;
+  background-color: rgba(255, 255, 255, 0.5);
+  
+}
+
+/*8----------------Courses*/
+.extraTopBottomM {
+  @include headerTopBottomMargin (50px,30px) 
+}
+
+/*9----------------Contact*/
+.contactStyle {
+  border-radius: 5%;
+}
+
+.pSides {
+  padding-left: $largeSidePadding;
+  padding-right: $largeSidePadding;
+}
+
+/*10---------------Media queries*/
+/*Bilder på Home sidan*/
+/*Här har jag behövt lägga in min egen media query för att jag behövde dölja bilden vid ett extra tillfälle ut över det som Bootstrap erbjuder.*/
+@media screen and (max-width: 1245px) {
+  .custumMedia {
+    display: none;
+    display: block;
+  }
+  .pSides {
+    padding: 0;
+  }
+}
+/*För att få rätt rubrik storlek i desktop vy.*/
+@media screen and (min-width: 768px) {
+  .largeFontHeading {
+  font-size: $largeHeadingDesktop;
+  }
+  .paragraphySize {
+    font-size: $paragraphyDesktop;
+  }
+}

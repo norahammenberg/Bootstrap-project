@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--
+  1.	Head.
+2.	Body starts.
+3.	Header
+4.	Main
+5.	Aside
+6.	Footer
+-->
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Examinationsuppgift, Webbutveckling med HTML och CSS" />
+    <meta name="author" content="Nora Hammenberg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Nora Hammenberg</title>
+    
+    <!--Bootstrap Css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <!--Min CSS-->
+    <link href="main.css" rel="stylesheet" type="text/css">
+
+    <!--googlefont-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Quattrocento+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--Bootstrap ikoner-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--Header för alla sidor förutom "home" med en mindre loggo-->
+  <!--Menyn är uppbyggd på samma sätt som på index.html skillnaden är att hamburger menyn är placerad längst ner i denna variationen och att det används en annan bild som flexar brevid menyn.-->
+  
+  <header class="header">
+    <!--d-flex klassen används för få elementen att flexa, justify-content-center placerar menyn i mitten-->
+    <div class="d-flex justify-content-center">
+      <!--header bild-->
+      <div>
+        <!--Responsiv bild https://getbootstrap.com/docs/5.1/content/images/-->
+        <!--olika padding classer används vid olika lägen för att skapa en responsiv sida-->
+        <!--d-none och d-block klasser används för att dölja bilden i mindfe enheter.-->
+        <img src="Images/logoonlytree.png" class="img-fluid p-4 p-xl-5 d-sm-none d-md-block d-none d-sm-block d-md-none d-lg-block" alt="Stone Tree Press Logo med adress">
+      </div>
+  
+    <!--navigerings meny brevid logo-->
+    <!--d-none och d-block används för att dölja menyn i de mindre enheterna-->
+    <nav class="navbar justify-content-center mt-5 d-sm-none d-md-block d-none d-sm-block d-md-none d-lg-block">
+    <!--Meny Horizontal alignment https://getbootstrap.com/docs/5.1/components/navs-tabs/-->
+      <ul class="nav text-uppercase menuList">
+          <!--min egna klass namn mTop används för att placera menyn på rätt ställe.-->
+          <li class="nav-item p-3">
+            <a class="nav-link active menu" aria-current="page" href="index.html">Home</a>
+          </li>
+  
+          <!--Dropdown från bootstarp under Dark dropdowns https://getbootstrap.com/docs/5.1/components/dropdowns/-->
+          <li class="p-3" id="navbarNavDarkDropdown1">
+            <ul class="navbar-nav dropdownList">
+              <li class="nav-item dropdown mobileMenu">
+                <a class="nav-link dropdown-toggle menu" href="#" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Collaboration
+                </a>
+                <ul class="dropdown-menu dropdownList">
+                  <li class="dropdownList"><a class="dropdown-item menu" href="collaboration.html">Edition Printing</a></li>
+                  <li class="dropdownList"><a class="dropdown-item menu" href="booking.html">Booking</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <!--slut på dropdown-->
+          <!--fortsättning på navigerings meny-->
+          <!--p-3 läggs till för att få ett bra mellan rum mellan de olika meny delarna-->
+          <li class="nav-item p-3">
+            <a class="nav-link menu" href="courses.html">Courses</a>
+          </li>
+          <li class="nav-item p-3">
+              <a class="nav-link menu" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+    <!--Hamburger meny för mindre enheter från, External content Bootstrap: https://getbootstrap.com/docs/5.0/components/navbar/-->
+    <!--Genom att använda de olika "d-none" och "d-block" kan jag dölja hamburger menyn där jag behöver-->
+    <div class="d-lg-none d-xl-block d-lg-block d-xl-none d-xxl-block d-xxl-none">
+     <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg p-4">
+          <!--Ul innuti dropdown menyn for mindre enheter--> 
+          <!--För att får stora bokstäver använder jag en klass från Bootstrap, jag lägger till en egen klass menuList för att i min CSS kunna ändra hover färgen-->            
+            <ul class="nav text-uppercase menuList">
+              <li class="nav-item">
+                <!--Här läggs mitt egna klassnamn menu till för att ge de olika länkarna i koden en spesifik färg.-->
+                <a class="nav-link menu " href="index.html">Home</a>
+              </li>
+              
+               <!--Dropdown från bootstarp under "Dark dropdowns https://getbootstrap.com/docs/5.1/components/dropdowns/-->
+               <li class="p-4 mt-3" id="navbarNavDarkDropdown2">
+                <!--Egen klass används för att få rätt färg på länken i focus och activt läge-->
+                <ul class="navbar-nav dropdownList">
+                  <li class="nav-item dropdown mTop">
+                    <a class="nav-link dropdown-toggle menu" href="#" id="navbarDarkDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Collaboration
+                    </a>
+                    <!--Egen klass används för att få rätt färg på länken i focus och activt läge-->
+                    <ul class="dropdown-menu dropdownList">
+                      <li class="dropdownList"><a class="dropdown-item menu" href="collaboration.html">Edition Printing</a></li>
+                      <li class="dropdownList"><a class="dropdown-item menu" href="booking.html">Booking</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <!--slut på dropdown-->
+  
+              <li class="nav-item">
+                <a class="nav-link menu" href="courses.html">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu" href="contact.html">Contact</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+      <!--navbar-light vals för att använda de ljusa färger som bootstrap erbjuder-->
+      <nav class="navbar navbar-light bg">
+        <!--text-start används för att få hamburgerbar knappen att vara på vänster sidan.-->
+        <div class="container-fluid text-start">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    </div>  <!--slut hamburger meny-->
+  </header>
+  <!--Slut på Header-->
+ 
+<!--I kontakt formulär använder jag bla ett form från bootstrap: https://getbootstrap.com/docs/5.1/forms/form-control/-->
+<main class="container-fluid container-lg mainWrapper">
+  <!--Olika flex klasser används för att skapa en responsiv sida där bild och formulär visas brevid varandra i de större enheterna och i den mindra enheterna stapplas de på varandra.-->
+  <div class="d-flex flex-column flex-md-row align-content-md-center bd-highlight mb-3 m-auto w-75">
+    <!--Responsiv bild från bootstrap: https://getbootstrap.com/docs/5.1/content/images/ -->
+    <div class="order-2 mb-5 order-md-1 m-auto mt-md-4">
+      <img src="Images/caryons.png" class="img-fluid" alt="Lithography crayons">
+    </div>
+  <!--Formulär-->
+  <!--Formuläret har blivit anpassat för detta ända mål men grund kommer från Bootstrap--> 
+  <!--Olika klasser används för att skapa en responsiv sida där bild och formulär får ny platts beroende på om det är en större enheter eller en mindre.-->
+    <form class="mb-2 p-3 order-md-2 flex-md-fill ps-lg-5 mt-lg-3">
+      <div class="mb-3">
+        <h1>Contact Us Here:</h1>
+        <label for="exampleFormControlInput1" class="form-label">Name:</label>
+        <input type="email" class="form-control mb-3"  placeholder="Name">
+
+        <label for="exampleFormControlInput1" class="form-label ">Email address:</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="text-end">
+        <!--tillaggd knapp från bootstrap-->
+        <a href="#" class="btn btn-outline-dark">Submit</a>
+        <p class="pt-2">Thank you for contacting Stone Tree Press</p>
+      </div>
+    </form>
+  </div> <!--Slut på flex box-->
+</main>
+
+<!--en aside används för ett nyhetsbrev. Här används min klass maunWrapper för att få rätt font w-75 för max width och en egen klass med padding på sidorna för att jag behövde mer än vad bootstrap gav möjlighet till-->
+<aside class="container-fluid mainWrapper w-75 mb-5 pSides">
+<!--Form grid från Bootstrap, här har jag tagit bort och lag till en del för att skapa en "newsletter subscrition": https://getbootstrap.com/docs/5.1/forms/layout/-->
+  <form class="row g-3">
+    <h2> Subscribe to our newsletter here</h2>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Name:</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Email</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+    
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">What woul you like to hear from us?</label>
+      <select id="inputState" class="form-select mainFont">
+        <option selected>Choose</option>
+        <option>Lithography Courses</option>
+        <option>One To One Courses</option>
+        <option>Collaborations</option>
+      </select>
+    </div>
+  
+    <div class="col-12 text-end">
+      <button type="submit" class="btn btn-outline-dark">Submit</button>
+    </div>
+  </form>
+<!--slut på "newsletter subscrition"-->
+</aside>
+<!--Slut på aside-->
+
+<!--footer-->
+    <!--Footern är samma  på alla sidor.-->
+    <!--footer från header and footer på bootstrap hemsida https://getbootstrap.com/docs/5.1/components/card/#header-and-footer-->
+    <footer class="footer">
+      <!--card för texten-->
+      <div class="card text-center">
+
+        <div class="card-body">
+
+          <h4 class="card-title p-3">Stone Tree Press</h4>
+          <!--En egen klass har lagts till för att få rätt "lineheight"-->
+          <div class="adressFooter">
+            <p class="card-text p-1">Patrick Studios </p>
+            <p> St Mary's Lane </p>
+            <p>LS9 7EH</p>
+            <p>Leeds</p>
+          </div>
+
+          <div>
+            <!--fs.3 används för storlek på ikonerna -->
+            <button class="btn fs-3">
+              <i class="bi bi-envelope-fill"></i>
+            </button>
+
+            <button class="btn fs-3">
+              <i class="bi bi-instagram"></i>
+            </button>
+
+            <button class="btn fs-3">
+              <i class="bi bi-facebook"></i>
+            </button>
+
+            <button class="btn fs-3">
+              <i class="bi bi-twitter"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  </footer>
+<!--Slut på footer-->  
+</body> 
+</html>

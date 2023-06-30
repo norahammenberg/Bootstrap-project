@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/*Varibales*/
+/*Mixins*/
+/*Stilmallar */
+/*-------Gemensamt för alla sidor-------*/
+/*Header*/
+.header {
+  font-family: 'Quattrocento Sans', sans-serif;
+  color: #414141;
+  letter-spacing: 0.5px;
+}
+
+.menu {
+  color: #949494;
+}
+
+/*Nestling, för att ge menyns olika länar en egen färg när användaren hover över*/
+ul.menuList a:hover {
+  color: black;
+}
+
+/*Nestling, här når jag de dropdown menyn och ger den egen färg när den är activ, focus.*/
+ul.dropdownList a:active {
+  color: black;
+}
+
+ul.dropdownList a:focus {
+  color: black;
+}
+
+ul.dropdownList li.dropdownList a:active {
+  background-color: white;
+}
+
+.mTop {
+  margin-top: -40px;
+}
+
+/*slut på Header*/
+/*Main*/
+.mainWrapper {
+  font-family: 'Open Sans', sans-serif;
+  color: #626262;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+.mainFont {
+  font-family: 'Open Sans', sans-serif;
+  color: #626262;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+/*Footer*/
+.footer {
+  font-family: 'Quattrocento Sans', sans-serif;
+  color: #414141;
+  letter-spacing: 0.5px;
+}
+
+.adressFooter {
+  line-height: 0.5;
+}
+
+/*Slut på footer*/
+/*-------Induviduella sidor:-------*/
+/*-------Home-------*/
+.largeFontHeading {
+  font-size: 50px;
+}
+
+.paragraphySize {
+  font-size: 18px;
+}
+
+.cardStyle {
+  background-color: #dfcdbe;
+  border: none;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+.cardNoBarder {
+  border: none;
+}
+
+/*-------Collaboration-------*/
+.noBorderRadios {
+  border-radius: 0px;
+}
+
+/*-------Booking-------*/
+.contactBackgroundImage {
+  background-image: url(Images/lithographystoneandsponges.png);
+  background-repeat: no-repeat;
+  background-position: 50% 38%;
+}
+
+.reservetionFormStyle {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*-------Courses-------*/
+.extraTopBottomM {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/*-------Contact-------*/
+.contactStyle {
+  border-radius: 5%;
+}
+
+.pSides {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/*------Media queries------*/
+/*Bilder på Home sidan*/
+/*Här har jag behövt lägga in min egen  media query för att jag behövde dölja bilden vid ett extra tillfälle ut efter det som Bootstrap erbjuder.*/
+@media screen and (max-width: 1245px) {
+  .custumMedia {
+    display: none;
+    display: block;
+  }
+  .pSides {
+    padding: 0;
+  }
+}
+
+/*För att få rätt rubrik storlek i desktop vy.*/
+@media screen and (min-width: 768px) {
+  .largeFontHeading {
+    font-size: 60px;
+  }
+  .paragraphySize {
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
